@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh);
+}
+
+.Appp__Start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.App__loggedin {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.App__header {
+  display: flex;
+  flex: 0.2;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
+}
+.App__header h1 {
+  font-weight: 750;
+  position: relative;
+  color: #fafafa;
+}
+.App__input {
+  display: flex;
+  flex-direction: row;
+  flex: 0.05;
+  width: 100%;
+  background: linear-gradient(0, #0d1418de, #0d1418de), url(bg-chat.png);
+  background-color: #0d1418;
+  position: relative;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.App__input form {
+  width: 100%;
+  display: flex;
+}
+.App__input form input {
+  width: 100%;
+  display: flex;
+  outline: none;
+  border: none;
+  padding: 0 25px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: #33383b;
+  color: #fff;
+}
+.App__input form button {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 700;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-bottom-right-radius: 30px;
+}
+.App__input form button:hover,
+.App__input form button:active {
+  background-color: #001aff;
+}
+
+.App__display {
+  flex: 0.75 1;
+  background: linear-gradient(0, #0d1418de, #0d1418de), url(bg-chat.png);
+  background-color: #0d1418;
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: local;
+  position: relative;
+  overflow-y: scroll;
+}
+.App__message,
+.App__sendmessage {
+  position: relative;
+  background-color: #3e4549;
+  padding: 7px 10px;
+  width: fit-content;
+  margin: 35px;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.App__message:before,
+.App__sendmessage:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -15px;
+  top: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #3e4549 #3e4549 transparent transparent;
+}
+
+.App__sendmessage {
+  background-color: #056162;
+}
+.App__sendmessage:before {
+  border-color: #056162 #056162 transparent transparent;
+}
+
+.App__display__user {
+  width: 100%;
+  font-size: 13px;
+  color: #ff0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.App__display__msg {
+  width: 100%;
+  font-size: large;
+  padding-left: 10px;
+}
+.App__display__time {
+  float: right;
+  width: fit-content;
+  font-size: xx-small;
+  margin-left: 15px;
+  transform: translateY(15px);
+}
+Button {
+  float: right;
+}
+@media screen and (max-width: 820px) {
+}
+@media screen and (max-width: 450px) {
+  .App__Start__sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  }
+  .App__header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 0px;
+  }
+  .App__header h1 {
+    font-weight: 600;
+    font-size: 2.2em;
+    position: relative;
+    text-align: center;
+  }
+  .App__header Button {
+    font-size: 15px;
+    padding: 4px 10px;
+    margin-bottom: 15px;
+  }
+  .App__input form input {
+    padding: 10px 25px;
+  }
+  .App__input form button {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom-right-radius: 15px;
+  }
+  .App__message,
+  .App__sendmessage {
+    margin: 15px 25px;
+  }
+}
