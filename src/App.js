@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 // import ListGroup from "react-bootstrap/ListGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import firebase from "firebase";
 import { db, auth, provider } from "./firebase";
@@ -12,6 +13,7 @@ import { useEffect, useState, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
 import { actionTypes } from "./reducer";
 import useStateValue from "./StateProvider";
+import Particles from "react-particles-js";
 
 function App() {
   const [messages, setMessages] = useState([""]);
@@ -56,6 +58,10 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    scrollTheDisp();
+  }, [messages]);
+
   //add new todo to database
   const addMessages = (event) => {
     event.preventDefault();
@@ -68,8 +74,6 @@ function App() {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .catch((err) => alert(err.message));
-
-    scrollTheDisp();
 
     setInput("");
   };
@@ -142,11 +146,60 @@ function App() {
   let Disp = React.createRef();
 
   function scrollTheDisp() {
-    Disp.current.scrollIntoView();
+    if (Disp.current != null) Disp.current.scrollIntoView();
   }
 
   return (
     <div className="App">
+      <Particles
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: "1",
+        }}
+        params={{
+          particles: {
+            number: {
+              value: 80,
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+            },
+            color: {
+              value: "#fff",
+            },
+            shape: {
+              type: "circle",
+              stroke: {
+                width: 1,
+                color: "#fff",
+              },
+              polygon: {
+                nb_sides: 6,
+              },
+              image: {
+                src: "",
+                width: 100,
+                height: 100,
+              },
+            },
+            opacity: {
+              value: 1,
+              random: false,
+              anim: {
+                enable: false,
+                speed: 3,
+                opacity_min: 0,
+                sync: false,
+              },
+            },
+          },
+        }}
+      />
       <Modal centered show={showSignUp} onHide={handleSignUpClose}>
         <Modal.Header closeButton>
           <Modal.Title>Sign Up</Modal.Title>
@@ -255,6 +308,13 @@ function App() {
                       {message.time ? message.time : null}
                     </span>
                   </span>
+                  {/* <Button
+                    onClick={(event) =>
+                      db.collection("users").doc(message.id).delete()
+                    }
+                  >
+                    <FontAwesomeIcon icon={faTrash} />
+                  </Button> */}
                 </div>
               );
             })}
@@ -279,6 +339,18 @@ function App() {
                 Submit
               </button>
             </form>
+          </div>
+          <div onClick={() => scrollTheDisp()} className="App__downarrow">
+            <FontAwesomeIcon
+              style={{
+                width: "25px",
+                height: "25px",
+                position: "relative",
+                top: "2px",
+                color: "#797c7e",
+              }}
+              icon={faAngleDown}
+            />
           </div>
         </div>
       ) : (
