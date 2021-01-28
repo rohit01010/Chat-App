@@ -20,6 +20,9 @@
   flex-direction: column;
   width: 100%;
 }
+.App__Start__sign {
+  z-index: 99;
+}
 
 .App__loggedin {
   width: 100%;

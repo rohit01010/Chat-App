@@ -200,7 +200,14 @@ function App() {
           },
         }}
       />
-      <Modal centered show={showSignUp} onHide={handleSignUpClose}>
+      <Modal
+        centered
+        style={{
+          zIndex: 99999999,
+        }}
+        show={showSignUp}
+        onHide={handleSignUpClose}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Sign Up</Modal.Title>
         </Modal.Header>
@@ -248,7 +255,14 @@ function App() {
         </Modal.Body>
       </Modal>
 
-      <Modal centered show={showSignIn} onHide={handleSignInClose}>
+      <Modal
+        style={{
+          zIndex: 999999999,
+        }}
+        centered
+        show={showSignIn}
+        onHide={handleSignInClose}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Sign In</Modal.Title>
         </Modal.Header>
