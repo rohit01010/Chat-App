@@ -1,4 +1,4 @@
-![Chat Website](https://github.com/rohit01010/ChatWebApp/blob/master/WebsiteImage.png)
+![Chat Website](https://github.com/rohit01010/Chat-App/blob/main/WebsiteImage.png)
 
 ## <a href="https://chat-it-now.web.app/">LIVE DEMO</a>
 
@@ -35,6 +35,6 @@ This will download all the node modules required
 
 ### Now you are ready to use and modify it
 
-### Star this repository if you like this project
+#### Star this repository if you like this project
 
-### If you have any doubts and suggesstion regarding this project feel free to contact me at <a href="https://www.linkedin.com/in/rohit-bhagat-2833801b1/">https://www.linkedin.com/in/rohit-bhagat-2833801b1/</a>
+#### If you have any doubts and suggesstion regarding this project feel free to contact me at <a href="https://www.linkedin.com/in/rohit-bhagat-2833801b1/">https://www.linkedin.com/in/rohit-bhagat-2833801b1/</a>
